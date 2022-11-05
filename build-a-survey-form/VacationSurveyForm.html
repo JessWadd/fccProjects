@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>Favorite Vacation Survey</title>
+	  <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="title">Favorite Vacation Survey</h1>
+    <p id="description">Tell us about your best vacation!</p>
+    <form id="survey-form"><!-- form needs action destination -->
+      <fieldset>
+        <label id="name-label">First Name<input type="text" name="first name" id="name" placeholder="enter first name here" required /></label>
+        <label id="name-label">Last Name<input type="text" name="last name" id="name" placeholder="enter last name here" required /></label>
+        <label id="email-label">Email<input type="email" name="email" id="email" placeholder="enter email address here" required /></label><!-- html5 validation errors? -->
+        <label id="number-label">Age<input type="number" id="number" name="age" min="13" max="120" placeholder="enter age here" required /></label>
+        <label>What best describes your vacation?<select name="vacation-type" id="dropdown">
+          <option name="select-one">select one</option>
+          <option>relaxing</option>
+          <option>active</option>
+          </select>
+        <label>How long was your vacation?</label>  
+        <label id="radio"><input type="radio" name="vacation-length" class="inline" value="1-2" />1-2 days
+        </label>
+        <label id="radio"><input type="radio" name="vacation-length" class="inline" 
+       value="3-5" />3-5 days
+        </label>
+        <label id="radio"><input type="radio" name="vacation-length" class="inline" value="6-10" />6-10 days
+        </label>
+        <label id="radio"><input type="radio" name="vacation-length" class="inline" value=">10" />> 10 days
+        </label>
+        <label>How did you travel?</label>
+        <label>
+          <input type="checkbox" name="walked" value="walked" class="inline" />walked</label>
+          <label>
+          <input type="checkbox" name="biked" value="biked" class="inline" />biked</label>
+          <label>
+          <input type="checkbox" name="drove" value="solo" class="inline" />drove</label>
+          <label>
+          <input type="checkbox" name="flew" value="flew" class="inline" />flew</label>
+          <label>
+          <input type="checkbox" name="other" value="other" class="inline" />other</label>
+          <label>Describe your vacation:<textarea name="describe-vacation" placeholder="My favorite vacation..."></textarea></label> 
+          <input type="submit" id="submit" value="Submit" rows="3" cols="40" />
+      </fieldset>
+    </form>
+  </body>
+</html>

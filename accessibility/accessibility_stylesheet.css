@@ -1,0 +1,125 @@
+html, body {
+    background-color: #fffceb;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+/*navbar list and h1*/
+#navbar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    border-right: solid;
+    border-color: #e9e0d4;
+    margin-left: -35px;
+    background-color: #fffceb;
+}
+
+/* try grid-auto-flow: row; and center to fix formatting of links */
+#navbar a {
+    display: block;
+    text-decoration: none; /*to remove underline on links to headers on this page*/
+    cursor: pointer;
+    color: #555555;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    border-top: solid;
+    border-color: #e9e0d4;
+    font-size: large;
+}
+/*sections and headers of main content*/
+#main-doc {
+    position: absolute;
+    margin-left: 285px;
+    margin-right: 70px;
+}
+section {
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    color: #c5bebe;
+}
+
+#main-doc header {
+    text-align: left;
+    margin-left: 15px;
+}
+
+p {
+    color: #555555;
+}
+
+code {
+    background-color: #f4eee0;
+    color: black;
+    border-radius: 5px;
+}
+
+pre code {
+    display: block;
+    white-space: pre-line;
+    position: relative;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+li {
+    color: #555555; 
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+  #navbar li {
+    float: left;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+  }
+  #navbar a {
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    margin-right: 1px;
+    margin-left: 1px;
+    border: solid;
+    border-color: #e9e0d4;
+    font-size: 14px;
+}
+  #navbar {
+    z-index: 10;
+    background-color: white;
+    position: absolute;
+    width: auto;
+    height: 150px;
+    top: 0px;
+    left: 0px;
+    margin-left: 0px;
+    border-right: none;
+    border-bottom: solid #c5bebe;
+  }
+  ul {
+    margin-left: -20px;
+  }
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 165px;
+}
+  section {
+    width: auto;
+    padding-right: 1em;
+    padding-left: 1em;
+  }
+  
+  .main-section {
+    top: 150px;
+  }
+}

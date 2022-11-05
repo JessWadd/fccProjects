@@ -1,0 +1,52 @@
+body {
+    width: 100%;
+    padding-bottom: 2em;
+    font-family: georgia;
+    background-color: #000066;
+    color: white;
+  }
+  
+  h1, p {
+    text-align: center;
+  }
+  
+  form {
+    padding: 0 1em 1em 0;
+  }
+  
+  fieldset {
+    padding-bottom: 1em;
+  }
+  
+  label {
+    display: block;
+    margin-top: 1em;
+    }
+  
+  input, select, textarea {
+    width: 100%;
+    background-color: #000033;
+    color: white;
+  }
+  
+  textarea {
+    margin-bottom: 1em;
+  }
+  
+  .inline {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+  }
+  
+  input[type="submit"] {
+    margin-top: 1em auto;
+    width: 60%;
+    font-family: georgia;
+    font-size: 1.2rem;
+    align: middle;
+  }
+  
+  fieldset {
+    margin-bottom: 1em;
+  }

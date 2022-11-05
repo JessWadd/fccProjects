@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+        <title>HTML and Accessibility Fundamentals</title>
+        <link rel="stylesheet" type="text/css" href="accessibility_stylesheet.css" media="screen" />
+        <meta charset="UTF-8">
+        <meta name="keywords" content="html, accessibility, fundamentals, new, developer">
+        <meta name="description" content="HTML and Accessibility Fundamentals">
+        <meta name="author" content="Jess Waddell">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- text/information taken from https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML -->
+    </head>
+
+    <body>
+
+        <nav id="navbar">
+            <header><h1>HTML and Accessibility Fundamentals</h1></header>
+            <ul>
+                <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+                <li><a href="#Using_good_semantics" class="nav-link">Using good semantics</a></li>
+                <li><a href="#Text_alternatives_and_data_tables" class="nav-link">Text alternatives and data tables</a></li>
+                <li><a href="#Links" class="nav-link">Links</a></li>
+                <li><a href="#Find_out_more" class="nav-link">Find out more</a></li>
+            </ul>
+        </nav>
+
+    <main id="main-doc">
+
+        <section class="main-section" id="Introduction">
+            <header><h2>Introduction</h2></header>
+            <p>A great deal of web content can be made accessible just by making sure the correct Hypertext Markup Language elements are used for the correct purpose at all times. Semantic HTML doesn't take any longer to write than non-semantic (bad) markup if you do it consistently from the start of your project. Even better, semantic markup has other benefits beyond accessibility:</p>
+            <ul>
+                <li>Easier to deveop with — you get some functionality for free, plus it is arguably easier to understand.</li>
+                <li>Better on mobile — semantic HTML is arguably lighter in file size than non-semantic spaghetti code, and easier to make responsive.</li>
+                <li>Good for SEO — search engines give more importance to keywords inside headings, links, etc. than keywords included in non-semantic <code>&lt;div&gt;</code>s, etc., so your documents will be more findable by customers.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Using_good_semantics">
+            <header><h2>Using good semantics</h2></header>
+            <p>Good semantics cannot be ignored, as it is one of the main places that accessibility is badly broken if not handled properly. Sometimes you are not in the position to get rid of lousy markup, but the goal isn't "all or nothing"; every improvement you can make will help the cause of accessibility.</p>
+            <p>One of the best accessibility aids a screen reader user can have is an excellent content structure with headings, paragraphs, lists, etc. Using good semantics may look like this:</p>
+            <pre><code>&lt;h1&gt;My heading&lt;/h1&gt;
+                &lt;p&gt;This is the first section of my document.&lt;/p&gt;
+                &lt;p&gt;I'll add another paragraph here too.&lt;/p&gt;
+                &lt;ol&gt; &lt;li&gt;Here is&lt;/li&gt;
+                &lt;li&gt;a list for&lt;/li&gt;
+                &lt;li&gt;you to read&lt;/li&gt;
+                &lt;/ol&gt; &lt;h2&gt;My subheading&lt;/h2&gt;
+                &lt;p&gt;This is the first subsection of my document. I'd love people to be able to find this content!&lt;/p&gt;
+                &lt;h2&gt;My 2nd subheading&lt;/h2&gt;
+                &lt;p&gt;This is the second subsection of my content. I think is more interesting than the last one.&lt;/p&gt;
+            </code></pre>
+            <p>Using clear language can also affect accessibility. In general, you should use clear language that is not overly complex and doesn't use unnecessary jargon or slang terms. Try to avoid using language and characters that don't get read out clearly by the screen reader. For example:</p>
+            <ul>
+                <li>Don't use dashes if you can avoid it. Instead of writing 5–7, write 5 to 7.</li>
+                <li>Expand abbreviations — instead of writing Jan, write January.</li>
+                <li>Expand acronyms, at least once or twice, then use the tag to describe them.</li>
+            </ul>
+            <p>People used to create page layouts using HTML tables, but this is not a good idea because a screen reader will likely give out confusing readouts, especially if the layout is complex and has many nested tables. If you try a more modern structure with a screen reader, you'll see that the layout markup no longer gets in the way and confuses the content readout. It is also much leaner and smaller in terms of code size, which means easier to maintain code, and less bandwidth for the user to download (particularly prevalent for those on slow connections).</p>
+            <p>One key aspect of the accessibility of UI controls is that by default, browsers allow them to be manipulated by the keyboard. You can press Enter/Return to follow a focused link or press a button, or start typing to enter text in a text input. Other form elements have different controls; for example, the <code>&lt;select&gt;</code> element can have its options displayed and cycled between using the up and down arrow keys. You essentially get this behavior for free, just by using the appropriate elements, e.g.</p>
+            <p>UI control text labels are very useful to all users, but getting them right is particularly important to users with disabilities. You should make sure that your button and link text labels are understandable and distinctive. Don't just use "Click here" for your labels, as screen reader users sometimes get up a list of buttons and form controls. Make sure your labels make sense out of context, read on their own, as well as in the context of the paragraph they are in. For example, the following shows an example of good link text:</p>
+            <pre><code>&lt;p&gt;Whales are really awesome creatures. &lt;a href=&quot;whales.html&quot;&gt;Find out more about whales&lt;/a&gt;.&lt;/p&gt;
+            </code></pre>
+        </section>
+
+        <section class="main-section" id="Text_alternatives_and_data_tables">
+            <header><h2>Text alternatives and data tables</h2></header>
+            <p>Whereas textual content is inherently accessible, the same cannot necessarily be said for multimedia content — image and video content cannot be seen by visually-impaired people, and audio content cannot be heard by hearing-impaired people. Follow this link for information on creating <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Multimedia" target="_blank">accessible multimedia content (opens in a new window)</a>.</p>
+            <p>With tables there is no way for a screen reader user to associate rows or columns together as groupings of data. To do this, you need to know what the header rows are and if they are heading up rows, columns, etc. (see <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced" target="_blank">accessible data tables (opens in a new window)</a>).</p>
+        </section>
+
+        <section class="main-section" id="Links">
+            <header><h2>Links</h2></header>
+            <p>Links ( the <code>&lt;a&gt;</code> element with an <code>href</code> attribute ), depending on how they are used, can help or harm accessibility. By default, links are accessible in appearance. They can improve accessibility by helping a user quickly navigate to different sections of a document. They can also harm accessibility if their accessible styling is removed or if JavaScript causes them to behave in unexpected ways.</p>
+            <p>By default, links are visually different from other text in both color and text-decoration, with links being blue and underlined by default, purple and underlined if visited, and with a focus-ring when they receive keyboard focus. Color should not be used as the sole method of distinguishing links from non-linking content. Link text color, like all text, has to be significantly different from the background color.</p>
+            <p>Anchor tags are often abused with the <code>onclick</code> event to create pseudo-buttons by setting href to <code>#</code> or <code>javascript:void(0)</code> to prevent the page from refreshing. It is recommended to use a <code>&lt;button&gt;</code> instead. In general you should only use an anchor for navigation using a proper URL.</p>
+            <p>Links that open in a new tab or window via the <code>target="_blank"</code> declaration and links to whose <code>href</code> value points to a file resource should include an indicator about the behavior that will occur when the link is activated. If an icon is used in place of text to signify this kind of links behavior, make sure it includes an alternate description.</p>
+            <p>Link that opens a new tab or window:</p>
+            <pre><code>&lt;a target=&quot;_blank&quot; href=&quot;https://www.wikipedia.org/&quot;&gt;Wikipedia (opens in a new window)&lt;/a&gt;
+            </code></pre>
+            <p>Link to a non-HTML resource:</p>
+            <pre><code>&lt;a target=&quot;_blank&quot; href=&quot;2017-annual-report.ppt&quot;&gt;2017 Annual Report (PowerPoint)&lt;/a&gt;
+            </code></pre>
+            <p>A skip link, also known as skipnav, is an <code>a</code> element placed as close as possible to the opening <code>&lt;body&gt;</code> element that links to the beginning of the page's main content. This link allows people to bypass content repeated throughout multiple pages on a website, such as a website's header and primary navigation.</p>
+            <p>Large amounts of interactive content—including anchors—placed in close visual proximity to each other should have space inserted to separate them. This spacing is beneficial for people who suffer from fine motor control issues and may accidentally activate the wrong interactive content while navigating.</p>
+        </section>
+
+        <section class="main-section" id="Find_out_more">
+            <header><h2>Find out more</h2></header>
+            <p>It is always a good idea to have a screen reader set up on your local computer so that you can do some testing.</p>
+            <p>For more information about making HTML more accessible, please visit:</p>
+            <ul>
+                <li><a href="https://www.w3.org/WAI/standards-guidelines/aria/" target="_blank">Web Accessibility Initiative (opens in a new window)</a></li>
+                <li><a href="https://www.section508.gov/create/developer-training/" target="_blank">Accessibility Training for Developers (opens in a new window)</a></li>
+                <li><a href="https://axesslab.com/" target="_blank">Axess Lab (opens in a new window)</a></li>
+            </ul>
+            <p>All content and resources are from MDN's <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML" target="_blank">HTML: A good basis for accessibility (opens in a new window)</a>.</p>
+        </section>
+
+    </main>
+
+    </body>
+
+</html>
